@@ -1,4 +1,4 @@
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import {BrowserRouter,HashRouter, Route, Routes} from 'react-router-dom'
 import Home from './pages/Home';
 import About from './pages/About';
 import Blog from './pages/Blog';
@@ -11,7 +11,7 @@ import Menu from './components/Menu';
 const App = () => {
     return (
         <div>            
-            <BrowserRouter>
+            {/* <BrowserRouter>
                 <Menu/>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
@@ -22,7 +22,19 @@ const App = () => {
                     <Route path="/service" element={<Service/>}/>
                     <Route path="*" element={<NotFound/>}/>
                 </Routes>
-            </BrowserRouter>
+            </BrowserRouter> */}
+            <HashRouter>
+                <Menu/>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/about" element={<About/>}/>
+                    <Route path="/blog" element={<Blog/>}/>
+                    <Route path="/contact" element={<Contact/>}/>
+                    <Route path="/project" element={<Project/>}/>
+                    <Route path="/service" element={<Service/>}/>
+                    <Route path="*" element={<NotFound/>}/>
+                </Routes>
+            </HashRouter>
         </div>
     );
 };
